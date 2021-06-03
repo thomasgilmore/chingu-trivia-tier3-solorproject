@@ -15,12 +15,14 @@ class API extends Component {
       answer: '',
       count: 0,
       numberOfQuestions: 0,
+      showNextButton: false 
     };
     this.callAPI = this.callAPI.bind(this);
     this.choiceAClicked = this.choiceAClicked.bind(this);
     this.choiceBClicked = this.choiceBClicked.bind(this);
     this.choiceCClicked = this.choiceCClicked.bind(this);
     this.choiceDClicked = this.choiceDClicked.bind(this);
+    this.nextQuestionClicked = this.nextQuestionClicked.bind(this);
   }
 
   callAPI() {
@@ -55,163 +57,62 @@ class API extends Component {
   }
   choiceAClicked() {
     if(this.state.answer === "a") {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     } else {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     }
   }
   choiceBClicked() {
     if(this.state.answer === "b") {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     } else {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     }
   }
   choiceCClicked() {
     if(this.state.answer === "c") {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
+      
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     } else {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
+      
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     }
   }
   choiceDClicked() {
     if(this.state.answer === "d") {
-      let i = this.state.count;
-      let newQuestionNumber = this.state.questionNumber + 1;
-      i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
+      
       this.setState({
-        question,
-        answer,
-        choiceA,
-        choiceB,
-        choiceC,
-        choiceD,
-        questionNumber: newQuestionNumber,
-        count: i
+        showNextButton: true
       })
       this.render()
     } else {
-      let i = this.state.count;
+      
+      this.setState({
+        showNextButton: true
+      })
+      this.render()
+    }
+  }
+  nextQuestionClicked() {
+    let i = this.state.count;
       let newQuestionNumber = this.state.questionNumber + 1;
       i++;
       let question = this.state.apiRespone[i].question;
@@ -228,10 +129,10 @@ class API extends Component {
         choiceC,
         choiceD,
         questionNumber: newQuestionNumber,
-        count: i
+        count: i,
+        showNextButton: false
       })
       this.render()
-    }
   }
   componentDidMount() {
     window.addEventListener('load', this.callAPI);
@@ -245,6 +146,7 @@ class API extends Component {
       <button onClick={this.choiceBClicked}>{this.state.choiceB}</button>
       {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked}>{this.state.choiceC}</button>
       <button onClick={this.choiceDClicked}>{this.state.choiceD}</button></div>}
+      {this.state.showNextButton === false ? <div> </div> : <div><button onClick={this.nextQuestionClicked}>NEXT</button></div>}
     </div>
   );
 }
