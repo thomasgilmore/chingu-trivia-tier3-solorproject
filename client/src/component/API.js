@@ -18,6 +18,9 @@ class API extends Component {
     };
     this.callAPI = this.callAPI.bind(this);
     this.choiceAClicked = this.choiceAClicked.bind(this);
+    this.choiceBClicked = this.choiceBClicked.bind(this);
+    this.choiceCClicked = this.choiceCClicked.bind(this);
+    this.choiceDClicked = this.choiceDClicked.bind(this);
   }
 
   callAPI() {
@@ -25,7 +28,7 @@ class API extends Component {
     .then(res => res.json())
     .then(res => {
       let apiRespone = res.data;
-      let numberOfQuestions = apiRespone.length - 1;
+      let numberOfQuestions = apiRespone.length;
       let firstQuestion = apiRespone[0].question;
       let answer = apiRespone[0].answer;
       let choiceA = apiRespone[0].choices.a;
@@ -95,6 +98,141 @@ class API extends Component {
       this.render()
     }
   }
+  choiceBClicked() {
+    if(this.state.answer === "b") {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    } else {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    }
+  }
+  choiceCClicked() {
+    if(this.state.answer === "c") {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    } else {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    }
+  }
+  choiceDClicked() {
+    if(this.state.answer === "d") {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    } else {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.apiRespone[i].question;
+      let answer = this.state.apiRespone[i].answer;
+      let choiceA = this.state.apiRespone[i].choices.a;
+      let choiceB = this.state.apiRespone[i].choices.b;
+      let choiceC = this.state.apiRespone[i].choices.c;
+      let choiceD = this.state.apiRespone[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i
+      })
+      this.render()
+    }
+  }
   componentDidMount() {
     window.addEventListener('load', this.callAPI);
   }
@@ -104,9 +242,9 @@ class API extends Component {
       <div>Question {this.state.questionNumber} / {this.state.numberOfQuestions}</div>
       <div>{this.state.question}</div>
       <button onClick={this.choiceAClicked}>{this.state.choiceA}</button>
-      <button>{this.state.choiceB}</button>
-      {this.state.choiceC === undefined ? <div> </div> : <div><button>{this.state.choiceC}</button>
-      <button>{this.state.choiceD}</button></div>}
+      <button onClick={this.choiceBClicked}>{this.state.choiceB}</button>
+      {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked}>{this.state.choiceC}</button>
+      <button onClick={this.choiceDClicked}>{this.state.choiceD}</button></div>}
     </div>
   );
 }
