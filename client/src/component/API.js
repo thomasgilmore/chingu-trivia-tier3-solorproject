@@ -45,16 +45,13 @@ class API extends Component {
       let htmlQuestions = [];
       let javaScriptQuestions = [];
       let cssQuestions = [];
-      for (var j = 0; j < numberOfQuestions; j++) {
+      for (var j = 0; j < numberOfQuestions + 1; j++) {
         if (apiRespone[j].topic === "html") {
           htmlQuestions.push(apiRespone[j]);
-          console.log("This is working HTML");
         } else if (apiRespone[j].topic === "javascript") {
           javaScriptQuestions.push(apiRespone[j]);
-          console.log("This is working javascript");
         } else if (apiRespone[j].topic === "css") {
           cssQuestions.push(apiRespone[j]);
-          console.log("This is working css");
         }
       }
       console.log(apiRespone);
