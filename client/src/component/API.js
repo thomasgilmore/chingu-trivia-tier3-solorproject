@@ -6,6 +6,9 @@ class API extends Component {
     this.state = {
       apiRespone: '',
       products: '',
+      htmlQuestions: [],
+      javaScriptQuestions: [],
+      cssQuestions: [],
       questionNumber: 1,
       question: '',
       choiceA: '',
@@ -39,6 +42,21 @@ class API extends Component {
       let choiceB = apiRespone[0].choices.b;
       let choiceC = apiRespone[0].choices.c;
       let choiceD = apiRespone[0].choices.d;
+      let htmlQuestions = [];
+      let javaScriptQuestions = [];
+      let cssQuestions = [];
+      for (var j = 0; j < numberOfQuestions; j++) {
+        if (apiRespone[j].topic === "html") {
+          htmlQuestions.push(apiRespone[j]);
+          console.log("This is working HTML");
+        } else if (apiRespone[j].topic === "javascript") {
+          javaScriptQuestions.push(apiRespone[j]);
+          console.log("This is working javascript");
+        } else if (apiRespone[j].topic === "css") {
+          cssQuestions.push(apiRespone[j]);
+          console.log("This is working css");
+        }
+      }
       console.log(apiRespone);
       this.setState({ 
         apiRespone,
@@ -48,7 +66,10 @@ class API extends Component {
         choiceB,
         choiceC,
         choiceD,
-        numberOfQuestions
+        numberOfQuestions,
+        htmlQuestions,
+        javaScriptQuestions,
+        cssQuestions
        });
       // this.state.apiRespone.forEach(res => {
       //   console.log(res.question);
