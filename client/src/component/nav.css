@@ -1,0 +1,29 @@
+nav {
+    text-align: left;
+    display: inline-flex;
+}
+
+nav > div {
+    display: inline-flex;
+}
+
+.chinguTriviaTitle {
+    display: inline-flex;
+    margin: 35px 45px;
+}
+
+.navUl {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+}
+
+.navUl > li {
+    display: inline-flex;
+    margin: 0 10px;
+}
+
+.navItem {
+    text-decoration: none;
+    color: #000;
+}
