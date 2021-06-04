@@ -1,6 +1,7 @@
 nav {
     text-align: left;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav > div {
@@ -12,6 +13,10 @@ nav > div {
     margin: 35px 45px;
 }
 
+.divNavUl {
+    justify-content: flex-end;
+}
+
 .navUl {
     align-items: center;
     display: flex;
@@ -21,6 +26,10 @@ nav > div {
 .navUl > li {
     display: inline-flex;
     margin: 0 10px;
+}
+
+li:last-child {
+    margin-right: 50px;
 }
 
 .navItem {
