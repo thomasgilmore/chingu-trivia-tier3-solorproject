@@ -7,7 +7,7 @@ const Nav = () => {
             <div>
                 <h1 className="chinguTriviaTitle">Chingu Trivia</h1>
             </div>
-            <div>
+            <div className="divNavUl">
                 <ul className="navUl">
                     <li>
                         <a href="#home" className="navItem">Home</a>
