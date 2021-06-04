@@ -15,7 +15,9 @@ class API extends Component {
       answer: '',
       count: 0,
       numberOfQuestions: 0,
-      showNextButton: false 
+      showNextButton: false,
+      answerMessage: '',
+      showAnswerMessage: false
     };
     this.callAPI = this.callAPI.bind(this);
     this.choiceAClicked = this.choiceAClicked.bind(this);
@@ -57,56 +59,76 @@ class API extends Component {
   }
   choiceAClicked() {
     if(this.state.answer === "a") {
+      let message = 'Well Done! Correct!';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     } else {
+      let message = 'Sorry... Wrong Choice.';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     }
   }
   choiceBClicked() {
     if(this.state.answer === "b") {
+      let message = 'Well Done! Correct!';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     } else {
+      let message = 'Sorry... Wrong Choice.';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     }
   }
   choiceCClicked() {
     if(this.state.answer === "c") {
-      
+      let message = 'Well Done! Correct!';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     } else {
-      
+      let message = 'Sorry... Wrong Choice.';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     }
   }
   choiceDClicked() {
     if(this.state.answer === "d") {
-      
+      let message = 'Well Done! Correct!';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     } else {
-      
+      let message = 'Sorry... Wrong Choice.';
       this.setState({
-        showNextButton: true
+        showNextButton: true,
+        answerMessage: message,
+        showAnswerMessage: true
       })
       this.render()
     }
@@ -130,7 +152,8 @@ class API extends Component {
         choiceD,
         questionNumber: newQuestionNumber,
         count: i,
-        showNextButton: false
+        showNextButton: false,
+        showAnswerMessage: false
       })
       this.render()
   }
@@ -146,6 +169,7 @@ class API extends Component {
       <button onClick={this.choiceBClicked}>{this.state.choiceB}</button>
       {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked}>{this.state.choiceC}</button>
       <button onClick={this.choiceDClicked}>{this.state.choiceD}</button></div>}
+      {this.state.showAnswerMessage === false ? <div> </div> : <div>{this.state.answerMessage}</div>}
       {this.state.showNextButton === false ? <div> </div> : <div><button onClick={this.nextQuestionClicked}>NEXT</button></div>}
     </div>
   );
