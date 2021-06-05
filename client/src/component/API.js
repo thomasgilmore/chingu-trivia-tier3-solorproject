@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './api.css';
 
 class API extends Component {
   constructor(props) {
@@ -183,15 +184,15 @@ class API extends Component {
   }
   render() {
   return (
-    <div>
+    <div className="questionCard">
       <div>Question {this.state.questionNumber} / {this.state.numberOfQuestions}</div>
-      <div>{this.state.question}</div>
-      <button onClick={this.choiceAClicked}>{this.state.choiceA}</button>
-      <button onClick={this.choiceBClicked}>{this.state.choiceB}</button>
-      {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked}>{this.state.choiceC}</button>
-      <button onClick={this.choiceDClicked}>{this.state.choiceD}</button></div>}
-      {this.state.showAnswerMessage === false ? <div> </div> : <div>{this.state.answerMessage}</div>}
-      {this.state.showNextButton === false ? <div> </div> : <div><button onClick={this.nextQuestionClicked}>NEXT</button></div>}
+      <h2 className="question">{this.state.question}</h2>
+      <button onClick={this.choiceAClicked} className="choiceButton">{this.state.choiceA}</button>
+      <button onClick={this.choiceBClicked} className="choiceButton">{this.state.choiceB}</button>
+      {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked} className="choiceButton">{this.state.choiceC}</button>
+      <button onClick={this.choiceDClicked} className="choiceButton">{this.state.choiceD}</button></div>}
+      {this.state.showAnswerMessage === false ? <div> </div> : <h4 className="answerMessage">{this.state.answerMessage}</h4>}
+      {this.state.showNextButton === false ? <div> </div> : <div><button onClick={this.nextQuestionClicked} className="nextButton">NEXT</button></div>}
     </div>
   );
 }
