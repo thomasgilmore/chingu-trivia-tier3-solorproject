@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './api.css';
+// import './api.css';
+import QuestionCard from './QuestionCard';
 
 class API extends Component {
   constructor(props) {
@@ -184,16 +185,29 @@ class API extends Component {
   }
   render() {
   return (
-    <div className="questionCard">
-      <div>Question {this.state.questionNumber} / {this.state.numberOfQuestions}</div>
-      <h2 className="question">{this.state.question}</h2>
-      <button onClick={this.choiceAClicked} className="choiceButton">{this.state.choiceA}</button>
-      <button onClick={this.choiceBClicked} className="choiceButton">{this.state.choiceB}</button>
-      {this.state.choiceC === undefined ? <div> </div> : <div><button onClick={this.choiceCClicked} className="choiceButton">{this.state.choiceC}</button>
-      <button onClick={this.choiceDClicked} className="choiceButton">{this.state.choiceD}</button></div>}
-      {this.state.showAnswerMessage === false ? <div> </div> : <h4 className="answerMessage">{this.state.answerMessage}</h4>}
-      {this.state.showNextButton === false ? <div> </div> : <div><button onClick={this.nextQuestionClicked} className="nextButton">NEXT</button></div>}
-    </div>
+    <section>
+    <QuestionCard 
+      count={this.state.count}
+      nextQuestionNumber={this.state.newQuestionNumber}
+      apiRespone={this.state.apiRespone}
+      questionNumber={this.state.questionNumber}
+      numberOfQuestions={this.state.numberOfQuestions}
+      choiceA={this.state.choiceA}
+      choiceB={this.state.choiceB}
+      choiceC={this.state.choiceC}
+      choiceD={this.state.choiceD}
+      showAnswerMessage={this.state.showAnswerMessage}
+      showNextButton={this.state.showNextButton}
+      answerMessage={this.state.answerMessage}
+      answer={this.state.answer}
+      question={this.state.question}
+      choiceAClicked={this.choiceAClicked}
+      choiceBClicked={this.choiceBClicked}
+      choiceCClicked={this.choiceCClicked}
+      choiceDClicked={this.choiceDClicked}
+      nextQuestionClicked={this.nextQuestionClicked}
+    />
+    </section>
   );
 }
 }
