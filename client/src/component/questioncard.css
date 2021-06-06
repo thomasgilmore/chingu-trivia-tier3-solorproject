@@ -1,0 +1,42 @@
+.questionCard {
+    -webkit-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    -moz-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    border: none;
+    margin: auto;
+    padding: 20px 20px 40px 20px;
+    width: 600px;
+    height: 300px;
+}
+
+.question {
+    margin: 10px;
+}
+
+.choiceButton {
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    -moz-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    border: none;
+    font-size: 16px;
+    margin: 5px;
+    padding: 20px;
+    width: 200px;
+}
+
+.answerMessage {
+    margin: 5px;
+}
+
+.nextButton {
+    background-color: #4278af;
+    -webkit-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    -moz-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
+    border: none;
+    color: #fff;
+    margin: 5px;
+    padding: 10px 15px;
+    width: 100px;
+}
