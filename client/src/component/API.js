@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './api.css';
+import './api.css';
 import QuestionCard from './QuestionCard';
 
 class API extends Component {
@@ -302,33 +302,34 @@ javaScriptTopicClicked() {
   render() {
   return (
     <section>
-    {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false  ? <div>
-    <button onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
-    <button onClick={this.cssTopicClicked}>{this.state.topic2}</button>
-    <button onClick={this.javaScriptTopicClicked}>{this.state.topic3}</button>
-     </div> :
-    
-    <QuestionCard 
-      count={this.state.count}
-      nextQuestionNumber={this.state.newQuestionNumber}
-      apiRespone={this.state.apiRespone}
-      questionNumber={this.state.questionNumber}
-      numberOfQuestions={this.state.numberOfQuestions}
-      choiceA={this.state.choiceA}
-      choiceB={this.state.choiceB}
-      choiceC={this.state.choiceC}
-      choiceD={this.state.choiceD}
-      showAnswerMessage={this.state.showAnswerMessage}
-      showNextButton={this.state.showNextButton}
-      answerMessage={this.state.answerMessage}
-      answer={this.state.answer}
-      question={this.state.question}
-      choiceAClicked={this.choiceAClicked}
-      choiceBClicked={this.choiceBClicked}
-      choiceCClicked={this.choiceCClicked}
-      choiceDClicked={this.choiceDClicked}
-      nextQuestionClicked={this.nextQuestionClicked}
-    /> }
+    {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false 
+      ? <div>
+      <button className="topicButton" onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
+      <button className="topicButton" onClick={this.cssTopicClicked}>{this.state.topic2}</button>
+      <button  className="topicButton" onClick={this.javaScriptTopicClicked}>{this.state.topic3}</button>
+    </div> :
+      <QuestionCard 
+        count={this.state.count}
+        nextQuestionNumber={this.state.newQuestionNumber}
+        apiRespone={this.state.apiRespone}
+        questionNumber={this.state.questionNumber}
+        numberOfQuestions={this.state.numberOfQuestions}
+        choiceA={this.state.choiceA}
+        choiceB={this.state.choiceB}
+        choiceC={this.state.choiceC}
+        choiceD={this.state.choiceD}
+        showAnswerMessage={this.state.showAnswerMessage}
+        showNextButton={this.state.showNextButton}
+        answerMessage={this.state.answerMessage}
+        answer={this.state.answer}
+        question={this.state.question}
+        choiceAClicked={this.choiceAClicked}
+        choiceBClicked={this.choiceBClicked}
+        choiceCClicked={this.choiceCClicked}
+        choiceDClicked={this.choiceDClicked}
+        nextQuestionClicked={this.nextQuestionClicked}
+      /> 
+    }
     </section>
   );
 }
