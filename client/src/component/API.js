@@ -30,6 +30,7 @@ class API extends Component {
       cssTopicClicked: false,
       javaScriptTopicClicked: false,
       numberOfCorrectAnswers: 0,
+      choiceAorBorCorDClicked: false
     };
     this.callAPI = this.callAPI.bind(this);
     this.htmlTopicClicked = this.htmlTopicClicked.bind(this);
@@ -156,17 +157,21 @@ javaScriptTopicClicked() {
       if(this.state.answer === "a") {
         let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
         let message = 'Well Done! Correct! You got ' +  newNumberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
           showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers
+          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+          choiceAorBorCorDClicked
         })
         this.render()
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';;
+        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
-          showAnswerMessage: true
+          showAnswerMessage: true,
+          choiceAorBorCorDClicked
         })
         this.render()
       }
@@ -174,19 +179,23 @@ javaScriptTopicClicked() {
     if(this.state.answer === "a") {
       let message = 'Well Done! Correct!';
       let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
         showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers
+        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
-        showAnswerMessage: true
+        showAnswerMessage: true,
+        choiceAorBorCorDClicked
       })
       this.render()
     }
@@ -197,17 +206,21 @@ javaScriptTopicClicked() {
       if(this.state.answer === "b") {
         let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
         let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
           showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers
+          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+          choiceAorBorCorDClicked
         })
         this.render()
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';;
+        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
-          showAnswerMessage: true
+          showAnswerMessage: true,
+          choiceAorBorCorDClicked
         })
         this.render()
       }
@@ -215,19 +228,23 @@ javaScriptTopicClicked() {
     if(this.state.answer === "b") {
       let message = 'Well Done! Correct!';
       let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
         showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers
+        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
-        showAnswerMessage: true
+        showAnswerMessage: true,
+        choiceAorBorCorDClicked
       })
       this.render()
     }
@@ -238,17 +255,21 @@ javaScriptTopicClicked() {
       if(this.state.answer === "c") {
         let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
         let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
           showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers
+          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+          choiceAorBorCorDClicked
         })
         this.render()
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';;
+        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
-          showAnswerMessage: true
+          showAnswerMessage: true,
+          choiceAorBorCorDClicked
         })
         this.render()
       }
@@ -256,19 +277,23 @@ javaScriptTopicClicked() {
     if(this.state.answer === "c") {
       let message = 'Well Done! Correct!';
       let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
         showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers
+        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
-        showAnswerMessage: true
+        showAnswerMessage: true,
+        choiceAorBorCorDClicked
       })
       this.render()
     }
@@ -279,17 +304,21 @@ javaScriptTopicClicked() {
       if(this.state.answer === "d") {
         let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
         let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
           showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers
+          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+          choiceAorBorCorDClicked
         })
         this.render()
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';;
+        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
+        let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
-          showAnswerMessage: true
+          showAnswerMessage: true,
+          choiceAorBorCorDClicked
         })
         this.render()
       }
@@ -297,19 +326,23 @@ javaScriptTopicClicked() {
     if(this.state.answer === "d") {
       let message = 'Well Done! Correct!';
       let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
         showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers
+        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
+      let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
         answerMessage: message,
-        showAnswerMessage: true
+        showAnswerMessage: true,
+        choiceAorBorCorDClicked
       })
       this.render()
     }
@@ -326,6 +359,7 @@ javaScriptTopicClicked() {
       let choiceB = this.state.htmlQuestions[i].choices.b;
       let choiceC = this.state.htmlQuestions[i].choices.c;
       let choiceD = this.state.htmlQuestions[i].choices.d;
+      let choiceAorBorCorDClicked = false;
       this.setState({
         question,
         answer,
@@ -336,7 +370,8 @@ javaScriptTopicClicked() {
         questionNumber: newQuestionNumber,
         count: i,
         showNextButton: false,
-        showAnswerMessage: false
+        showAnswerMessage: false,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else if (this.state.cssTopicClicked === true) {
@@ -349,6 +384,7 @@ javaScriptTopicClicked() {
       let choiceB = this.state.cssQuestions[i].choices.b;
       let choiceC = this.state.cssQuestions[i].choices.c;
       let choiceD = this.state.cssQuestions[i].choices.d;
+      let choiceAorBorCorDClicked = false;
       this.setState({
         question,
         answer,
@@ -359,7 +395,8 @@ javaScriptTopicClicked() {
         questionNumber: newQuestionNumber,
         count: i,
         showNextButton: false,
-        showAnswerMessage: false
+        showAnswerMessage: false,
+        choiceAorBorCorDClicked
       })
       this.render()
     } else if (this.state.javaScriptTopicClicked === true) {
@@ -372,6 +409,7 @@ javaScriptTopicClicked() {
       let choiceB = this.state.javaScriptQuestions[i].choices.b;
       let choiceC = this.state.javaScriptQuestions[i].choices.c;
       let choiceD = this.state.javaScriptQuestions[i].choices.d;
+      let choiceAorBorCorDClicked = false;
       this.setState({
         question,
         answer,
@@ -382,7 +420,8 @@ javaScriptTopicClicked() {
         questionNumber: newQuestionNumber,
         count: i,
         showNextButton: false,
-        showAnswerMessage: false
+        showAnswerMessage: false,
+        choiceAorBorCorDClicked
       })
       this.render()
     }
@@ -420,6 +459,7 @@ javaScriptTopicClicked() {
         choiceCClicked={this.choiceCClicked}
         choiceDClicked={this.choiceDClicked}
         nextQuestionClicked={this.nextQuestionClicked}
+        choiceAorBorCorDClicked={this.state.choiceAorBorCorDClicked}
       /> 
     }
     </section>
