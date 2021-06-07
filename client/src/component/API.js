@@ -22,9 +22,18 @@ class API extends Component {
       numberOfQuestions: 0,
       showNextButton: false,
       answerMessage: '',
-      showAnswerMessage: false
+      showAnswerMessage: false,
+      topic1: '',
+      topic2: '',
+      topic3: '',
+      htmlTopicClicked: false,
+      cssTopicClicked: false,
+      javaScriptTopicClicked: false
     };
     this.callAPI = this.callAPI.bind(this);
+    this.htmlTopicClicked = this.htmlTopicClicked.bind(this);
+    this.cssTopicClicked = this.cssTopicClicked.bind(this);
+    this.javaScriptTopicClicked = this.javaScriptTopicClicked.bind(this);
     this.choiceAClicked = this.choiceAClicked.bind(this);
     this.choiceBClicked = this.choiceBClicked.bind(this);
     this.choiceCClicked = this.choiceCClicked.bind(this);
@@ -47,16 +56,20 @@ class API extends Component {
       let htmlQuestions = [];
       let javaScriptQuestions = [];
       let cssQuestions = [];
+      let topic1, topic2, topic3;
       for (var j = 0; j < numberOfQuestions; j++) {
         if (apiRespone[j].topic === "html") {
           htmlQuestions.push(apiRespone[j]);
+          topic1 = apiRespone[j].topic;
           // console.log("This is working HTML");
-        } else if (apiRespone[j].topic === "javascript") {
-          javaScriptQuestions.push(apiRespone[j]);
-          // console.log("This is working javascript");
         } else if (apiRespone[j].topic === "css") {
           cssQuestions.push(apiRespone[j]);
+          topic2 = apiRespone[j].topic;
           // console.log("This is working css");
+        } else if (apiRespone[j].topic === "javascript") {
+          javaScriptQuestions.push(apiRespone[j]);
+          topic3 = apiRespone[j].topic;
+          // console.log("This is working javascript");
         }
       }
       // console.log(apiRespone);
@@ -71,7 +84,10 @@ class API extends Component {
         numberOfQuestions,
         htmlQuestions,
         javaScriptQuestions,
-        cssQuestions
+        cssQuestions,
+        topic1,
+        topic2,
+        topic3
        });
       // this.state.apiRespone.forEach(res => {
       //   console.log(res.question);
@@ -80,6 +96,57 @@ class API extends Component {
     // .then(res => this.setState({ reapiRespone }))
     // console.log(this.state.apiRespone);
   }
+    htmlTopicClicked() {
+      let htmlTopicClicked = true;
+      let cssTopicClicked = false;
+      let javaScriptTopicClicked = false;
+      let questionNumber = 1;
+      let count = 0;
+      let numberOfQuestions = this.state.htmlQuestions.length;
+      let firstQuestion = this.state.htmlQuestions[0].question;
+      let answer = this.state.htmlQuestions[0].answer;
+      let choiceA = this.state.htmlQuestions[0].choices.a;
+      let choiceB = this.state.htmlQuestions[0].choices.b;
+      let choiceC = this.state.htmlQuestions[0].choices.c;
+      let choiceD = this.state.htmlQuestions[0].choices.d;
+      this.setState({
+        htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD
+      })
+  }
+  cssTopicClicked() {
+    let htmlTopicClicked = false;
+    let cssTopicClicked = true;
+    let javaScriptTopicClicked = false;
+    let questionNumber = 1;
+    let count = 0;
+    let numberOfQuestions = this.state.cssQuestions.length;
+    let firstQuestion = this.state.cssQuestions[0].question;
+    let answer = this.state.cssQuestions[0].answer;
+    let choiceA = this.state.cssQuestions[0].choices.a;
+    let choiceB = this.state.cssQuestions[0].choices.b;
+    let choiceC = this.state.cssQuestions[0].choices.c;
+    let choiceD = this.state.cssQuestions[0].choices.d;
+    this.setState({
+      htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD
+    })
+}
+javaScriptTopicClicked() {
+  let htmlTopicClicked = false;
+  let cssTopicClicked = false;
+  let javaScriptTopicClicked = true;
+  let questionNumber = 1;
+  let count = 0;
+  let numberOfQuestions = this.state.javaScriptQuestions.length;
+  let firstQuestion = this.state.javaScriptQuestions[0].question;
+  let answer = this.state.javaScriptQuestions[0].answer;
+  let choiceA = this.state.javaScriptQuestions[0].choices.a;
+  let choiceB = this.state.javaScriptQuestions[0].choices.b;
+  let choiceC = this.state.javaScriptQuestions[0].choices.c;
+  let choiceD = this.state.javaScriptQuestions[0].choices.d;
+  this.setState({
+    htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD
+  })
+}
   choiceAClicked() {
     if(this.state.answer === "a") {
       let message = 'Well Done! Correct!';
@@ -157,15 +224,16 @@ class API extends Component {
     }
   }
   nextQuestionClicked() {
-    let i = this.state.count;
+    if (this.state.htmlTopicClicked === true) {
+      let i = this.state.count;
       let newQuestionNumber = this.state.questionNumber + 1;
       i++;
-      let question = this.state.apiRespone[i].question;
-      let answer = this.state.apiRespone[i].answer;
-      let choiceA = this.state.apiRespone[i].choices.a;
-      let choiceB = this.state.apiRespone[i].choices.b;
-      let choiceC = this.state.apiRespone[i].choices.c;
-      let choiceD = this.state.apiRespone[i].choices.d;
+      let question = this.state.htmlQuestions[i].question;
+      let answer = this.state.htmlQuestions[i].answer;
+      let choiceA = this.state.htmlQuestions[i].choices.a;
+      let choiceB = this.state.htmlQuestions[i].choices.b;
+      let choiceC = this.state.htmlQuestions[i].choices.c;
+      let choiceD = this.state.htmlQuestions[i].choices.d;
       this.setState({
         question,
         answer,
@@ -179,6 +247,54 @@ class API extends Component {
         showAnswerMessage: false
       })
       this.render()
+    } else if (this.state.cssTopicClicked === true) {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.cssQuestions[i].question;
+      let answer = this.state.cssQuestions[i].answer;
+      let choiceA = this.state.cssQuestions[i].choices.a;
+      let choiceB = this.state.cssQuestions[i].choices.b;
+      let choiceC = this.state.cssQuestions[i].choices.c;
+      let choiceD = this.state.cssQuestions[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i,
+        showNextButton: false,
+        showAnswerMessage: false
+      })
+      this.render()
+    } else if (this.state.javaScriptTopicClicked === true) {
+      let i = this.state.count;
+      let newQuestionNumber = this.state.questionNumber + 1;
+      i++;
+      let question = this.state.javaScriptQuestions[i].question;
+      let answer = this.state.javaScriptQuestions[i].answer;
+      let choiceA = this.state.javaScriptQuestions[i].choices.a;
+      let choiceB = this.state.javaScriptQuestions[i].choices.b;
+      let choiceC = this.state.javaScriptQuestions[i].choices.c;
+      let choiceD = this.state.javaScriptQuestions[i].choices.d;
+      this.setState({
+        question,
+        answer,
+        choiceA,
+        choiceB,
+        choiceC,
+        choiceD,
+        questionNumber: newQuestionNumber,
+        count: i,
+        showNextButton: false,
+        showAnswerMessage: false
+      })
+      this.render()
+    }
+    
   }
   componentDidMount() {
     window.addEventListener('load', this.callAPI);
@@ -186,6 +302,12 @@ class API extends Component {
   render() {
   return (
     <section>
+    {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false  ? <div>
+    <button onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
+    <button onClick={this.cssTopicClicked}>{this.state.topic2}</button>
+    <button onClick={this.javaScriptTopicClicked}>{this.state.topic3}</button>
+     </div> :
+    
     <QuestionCard 
       count={this.state.count}
       nextQuestionNumber={this.state.newQuestionNumber}
@@ -206,7 +328,7 @@ class API extends Component {
       choiceCClicked={this.choiceCClicked}
       choiceDClicked={this.choiceDClicked}
       nextQuestionClicked={this.nextQuestionClicked}
-    />
+    /> }
     </section>
   );
 }
