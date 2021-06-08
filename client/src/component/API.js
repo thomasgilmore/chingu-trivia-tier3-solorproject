@@ -432,7 +432,7 @@ javaScriptTopicClicked() {
   }
   render() {
   return (
-    <section>
+    <div className="container">
     {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false 
       ? <div>
       <button className="topicButton" onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
@@ -462,7 +462,7 @@ javaScriptTopicClicked() {
         choiceAorBorCorDClicked={this.state.choiceAorBorCorDClicked}
       /> 
     }
-    </section>
+    </div>
   );
 }
 }
