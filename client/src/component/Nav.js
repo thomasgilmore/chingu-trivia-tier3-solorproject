@@ -5,15 +5,15 @@ const Nav = () => {
     return (
         <nav>
             <div>
-                <h1 id="home" className="chinguTriviaTitle">Chingu Trivia</h1>
+                <h1 className="chinguTriviaTitle">Chingu Trivia</h1>
             </div>
             <div className="divNavUl">
                 <ul className="navUl">
                     <li>
-                        <a href="#home" className="navItem">Home</a>
+                        <a href="" className="navItem">Home</a>
                     </li>
                     <li>
-                        <a href="#home" className="navItem">Questions</a>
+                        <a href="" className="navItem">Questions</a>
                     </li>
                 </ul>
             </div>
