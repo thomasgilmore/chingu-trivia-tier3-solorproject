@@ -1,3 +1,15 @@
+.container {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.topicButtonDiv {
+    display: inline-flex;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+}
+
 .topicButton {
     background-color: #fff;
     -webkit-box-shadow: 1px 1.5px 1.5px 1.5px lightgray;
@@ -8,4 +20,20 @@
     margin: 5px;
     padding: 20px;
     width: 200px;
+}
+
+@media (min-width: 200px) {
+    .topicButtonDiv {
+        
+    }
+}
+
+@media (min-width: 400px) {
+    .topicButtonDiv {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        justify-content: center;
+        width: 100%;
+    }
 }
