@@ -40,3 +40,273 @@
     padding: 10px 15px;
     width: 100px;
 }
+
+@media (min-width: 200px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 195px;
+        height: 500px;
+    }
+    
+    .question {
+        font-size: 12px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 14px;
+        margin: 5px;
+        padding: 10px;
+        width: 175px;
+    }
+    
+    .answerMessage {
+        font-size: 12px;
+    }
+    
+    .nextButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 300px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 295px;
+        height: 500px;
+    }
+    
+    .question {
+        font-size: 12px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 14px;
+        margin: 5px;
+        padding: 10px;
+        width: 175px;
+    }
+    
+    .answerMessage {
+        font-size: 12px;
+    }
+    
+    .nextButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 400px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 395px;
+        height: 500px;
+    }
+    
+    .question {
+        font-size: 12px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 14px;
+        margin: 5px;
+        padding: 10px;
+        width: 175px;
+    }
+    
+    .answerMessage {
+        font-size: 12px;
+    }
+    
+    .nextButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 400px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 395px;
+        height: 500px;
+    }
+    
+    .question {
+        font-size: 12px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 14px;
+        margin: 5px;
+        padding: 10px;
+        width: 175px;
+    }
+    
+    .answerMessage {
+        font-size: 12px;
+    }
+    
+    .nextButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 500px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 495px;
+        height: 400px;
+    }
+    
+    .question {
+        font-size: 18px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+        width: 400px;
+    }
+    
+    .answerMessage {
+        font-size: 16px;
+    }
+    
+    .nextButton {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 600px) {
+    .questionCard {
+        padding: 5px 5px 20px 5px;
+        width: 595px;
+        height: 500px;
+    }
+    
+    .question {
+        font-size: 24px;
+    }
+
+    .choiceButtonContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+        width: 250px;
+    }
+    
+    .answerMessage {
+        font-size: 16px;
+    }
+    
+    .nextButton {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 605px) {
+    .questionCard {
+        padding: 20px 20px 40px 20px;
+        width: 600px;
+        height: 350px;
+    }
+    
+    .question {
+        font-size: 24px;
+    }
+
+    .choiceButtonContainer {
+        display: block;
+    }
+
+    .choiceCandDdiv {
+        display: inherit;
+        margin: 0;
+    }
+    
+    .choiceButton {
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+        width: 250px;
+    }
+    
+    .answerMessage {
+        font-size: 16px;
+    }
+    
+    .nextButton {
+        font-size: 16px;
+    }
+}
