@@ -434,7 +434,7 @@ javaScriptTopicClicked() {
   return (
     <div className="container">
     {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false 
-      ? <div>
+      ? <div className="topicButtonDiv">
       <button className="topicButton" onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
       <button className="topicButton" onClick={this.cssTopicClicked}>{this.state.topic2}</button>
       <button  className="topicButton" onClick={this.javaScriptTopicClicked}>{this.state.topic3}</button>

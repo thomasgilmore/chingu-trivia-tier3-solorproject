@@ -49,7 +49,7 @@
     }
     
     .question {
-        font-size: 12px;
+        font-size: 8px;
     }
 
     .choiceButtonContainer {
@@ -65,7 +65,7 @@
     }
     
     .choiceButton {
-        font-size: 14px;
+        font-size: 12px;
         margin: 5px;
         padding: 10px;
         width: 175px;
@@ -88,7 +88,7 @@
     }
     
     .question {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .choiceButtonContainer {
@@ -107,15 +107,15 @@
         font-size: 14px;
         margin: 5px;
         padding: 10px;
-        width: 175px;
+        width: 200px;
     }
     
     .answerMessage {
-        font-size: 12px;
+        font-size: 14px;
     }
     
     .nextButton {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
@@ -123,11 +123,11 @@
     .questionCard {
         padding: 5px 5px 20px 5px;
         width: 395px;
-        height: 500px;
+        height: 475px;
     }
     
     .question {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .choiceButtonContainer {
@@ -143,57 +143,18 @@
     }
     
     .choiceButton {
-        font-size: 14px;
+        font-size: 16px;
         margin: 5px;
         padding: 10px;
-        width: 175px;
+        width: 300px;
     }
     
     .answerMessage {
-        font-size: 12px;
+        font-size: 16px;
     }
     
     .nextButton {
-        font-size: 12px;
-    }
-}
-
-@media (min-width: 400px) {
-    .questionCard {
-        padding: 5px 5px 20px 5px;
-        width: 395px;
-        height: 500px;
-    }
-    
-    .question {
-        font-size: 12px;
-    }
-
-    .choiceButtonContainer {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .choiceCandDdiv {
-        display: inherit;
-        flex-direction: inherit;
-        margin: 0;
-    }
-    
-    .choiceButton {
-        font-size: 14px;
-        margin: 5px;
-        padding: 10px;
-        width: 175px;
-    }
-    
-    .answerMessage {
-        font-size: 12px;
-    }
-    
-    .nextButton {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
