@@ -66,18 +66,14 @@ class API extends Component {
         if (apiRespone[j].topic === "html") {
           htmlQuestions.push(apiRespone[j]);
           topic1 = apiRespone[j].topic;
-          // console.log("This is working HTML");
         } else if (apiRespone[j].topic === "css") {
           cssQuestions.push(apiRespone[j]);
           topic2 = apiRespone[j].topic;
-          // console.log("This is working css");
         } else if (apiRespone[j].topic === "javascript") {
           javaScriptQuestions.push(apiRespone[j]);
           topic3 = apiRespone[j].topic;
-          // console.log("This is working javascript");
         }
       }
-      // console.log(apiRespone);
       this.setState({ 
         apiRespone,
         question: firstQuestion,
@@ -94,12 +90,7 @@ class API extends Component {
         topic2,
         topic3
        });
-      // this.state.apiRespone.forEach(res => {
-      //   console.log(res.question);
-      // });
-    })
-    // .then(res => this.setState({ reapiRespone }))
-    // console.log(this.state.apiRespone);
+    });
   }
 
   navItemClick() {
@@ -109,24 +100,27 @@ class API extends Component {
     this.setState({ htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked })
   }
 
-    htmlTopicClicked() {
-      let htmlTopicClicked = true;
-      let cssTopicClicked = false;
-      let javaScriptTopicClicked = false;
-      let questionNumber = 1;
-      let count = 0;
-      let numberOfQuestions = this.state.htmlQuestions.length;
-      let firstQuestion = this.state.htmlQuestions[0].question;
-      let answer = this.state.htmlQuestions[0].answer;
-      let choiceA = this.state.htmlQuestions[0].choices.a;
-      let choiceB = this.state.htmlQuestions[0].choices.b;
-      let choiceC = this.state.htmlQuestions[0].choices.c;
-      let choiceD = this.state.htmlQuestions[0].choices.d;
-      let numberOfCorrectAnswers = 0;
-      this.setState({
-        htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
-      })
+  htmlTopicClicked() {
+    let htmlTopicClicked = true;
+    let cssTopicClicked = false;
+    let javaScriptTopicClicked = false;
+    let questionNumber = 1;
+    let count = 0;
+    let numberOfQuestions = this.state.htmlQuestions.length;
+    let firstQuestion = this.state.htmlQuestions[0].question;
+    let answer = this.state.htmlQuestions[0].answer;
+    let choiceA = this.state.htmlQuestions[0].choices.a;
+    let choiceB = this.state.htmlQuestions[0].choices.b;
+    let choiceC = this.state.htmlQuestions[0].choices.c;
+    let choiceD = this.state.htmlQuestions[0].choices.d;
+    let numberOfCorrectAnswers = 0;
+    this.setState({
+      htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, 
+      questionNumber, count, numberOfQuestions, firstQuestion,
+       answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
+    })
   }
+
   cssTopicClicked() {
     let htmlTopicClicked = false;
     let cssTopicClicked = true;
@@ -142,27 +136,33 @@ class API extends Component {
     let choiceD = this.state.cssQuestions[0].choices.d;
     let numberOfCorrectAnswers = 0;
     this.setState({
-      htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
+      htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, 
+      questionNumber, count, numberOfQuestions, firstQuestion,
+      answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
     })
-}
-javaScriptTopicClicked() {
-  let htmlTopicClicked = false;
-  let cssTopicClicked = false;
-  let javaScriptTopicClicked = true;
-  let questionNumber = 1;
-  let count = 0;
-  let numberOfQuestions = this.state.javaScriptQuestions.length;
-  let firstQuestion = this.state.javaScriptQuestions[0].question;
-  let answer = this.state.javaScriptQuestions[0].answer;
-  let choiceA = this.state.javaScriptQuestions[0].choices.a;
-  let choiceB = this.state.javaScriptQuestions[0].choices.b;
-  let choiceC = this.state.javaScriptQuestions[0].choices.c;
-  let choiceD = this.state.javaScriptQuestions[0].choices.d;
-  let numberOfCorrectAnswers = 0;
-  this.setState({
-    htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, questionNumber, count, numberOfQuestions, firstQuestion, answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
-  })
-}
+  }
+
+  javaScriptTopicClicked() {
+    let htmlTopicClicked = false;
+    let cssTopicClicked = false;
+    let javaScriptTopicClicked = true;
+    let questionNumber = 1;
+    let count = 0;
+    let numberOfQuestions = this.state.javaScriptQuestions.length;
+    let firstQuestion = this.state.javaScriptQuestions[0].question;
+    let answer = this.state.javaScriptQuestions[0].answer;
+    let choiceA = this.state.javaScriptQuestions[0].choices.a;
+    let choiceB = this.state.javaScriptQuestions[0].choices.b;
+    let choiceC = this.state.javaScriptQuestions[0].choices.c;
+    let choiceD = this.state.javaScriptQuestions[0].choices.d;
+    let numberOfCorrectAnswers = 0;
+    this.setState({
+      htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, 
+      questionNumber, count, numberOfQuestions, firstQuestion, 
+      answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
+    })
+  }
+
   choiceAClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "a") {
@@ -175,7 +175,6 @@ javaScriptTopicClicked() {
           numberOfCorrectAnswers: newNumberOfCorrectAnswers,
           choiceAorBorCorDClicked
         })
-        this.render()
       } else {
         let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
         let choiceAorBorCorDClicked = true;
@@ -184,7 +183,6 @@ javaScriptTopicClicked() {
           showAnswerMessage: true,
           choiceAorBorCorDClicked
         })
-        this.render()
       }
     } else {
     if(this.state.answer === "a") {
@@ -198,7 +196,6 @@ javaScriptTopicClicked() {
         numberOfCorrectAnswers: newNumberOfCorrectAnswers,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
       let choiceAorBorCorDClicked = true;
@@ -208,10 +205,10 @@ javaScriptTopicClicked() {
         showAnswerMessage: true,
         choiceAorBorCorDClicked
       })
-      this.render()
     }
   }
   }
+
   choiceBClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "b") {
@@ -224,7 +221,6 @@ javaScriptTopicClicked() {
           numberOfCorrectAnswers: newNumberOfCorrectAnswers,
           choiceAorBorCorDClicked
         })
-        this.render()
       } else {
         let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
         let choiceAorBorCorDClicked = true;
@@ -233,7 +229,6 @@ javaScriptTopicClicked() {
           showAnswerMessage: true,
           choiceAorBorCorDClicked
         })
-        this.render()
       }
     } else {
     if(this.state.answer === "b") {
@@ -247,7 +242,6 @@ javaScriptTopicClicked() {
         numberOfCorrectAnswers: newNumberOfCorrectAnswers,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
       let choiceAorBorCorDClicked = true;
@@ -257,10 +251,10 @@ javaScriptTopicClicked() {
         showAnswerMessage: true,
         choiceAorBorCorDClicked
       })
-      this.render()
     }
   }
   }
+
   choiceCClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "c") {
@@ -273,7 +267,6 @@ javaScriptTopicClicked() {
           numberOfCorrectAnswers: newNumberOfCorrectAnswers,
           choiceAorBorCorDClicked
         })
-        this.render()
       } else {
         let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
         let choiceAorBorCorDClicked = true;
@@ -282,7 +275,6 @@ javaScriptTopicClicked() {
           showAnswerMessage: true,
           choiceAorBorCorDClicked
         })
-        this.render()
       }
     } else {
     if(this.state.answer === "c") {
@@ -296,7 +288,6 @@ javaScriptTopicClicked() {
         numberOfCorrectAnswers: newNumberOfCorrectAnswers,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
       let choiceAorBorCorDClicked = true;
@@ -306,10 +297,10 @@ javaScriptTopicClicked() {
         showAnswerMessage: true,
         choiceAorBorCorDClicked
       })
-      this.render()
     }
   }
   }
+
   choiceDClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "d") {
@@ -322,7 +313,6 @@ javaScriptTopicClicked() {
           numberOfCorrectAnswers: newNumberOfCorrectAnswers,
           choiceAorBorCorDClicked
         })
-        this.render()
       } else {
         let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
         let choiceAorBorCorDClicked = true;
@@ -331,7 +321,6 @@ javaScriptTopicClicked() {
           showAnswerMessage: true,
           choiceAorBorCorDClicked
         })
-        this.render()
       }
     } else {
     if(this.state.answer === "d") {
@@ -345,7 +334,6 @@ javaScriptTopicClicked() {
         numberOfCorrectAnswers: newNumberOfCorrectAnswers,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else {
       let message = 'Sorry... Wrong Choice.';
       let choiceAorBorCorDClicked = true;
@@ -355,10 +343,10 @@ javaScriptTopicClicked() {
         showAnswerMessage: true,
         choiceAorBorCorDClicked
       })
-      this.render()
     }
   }
   }
+
   nextQuestionClicked() {
     if (this.state.htmlTopicClicked === true) {
       let i = this.state.count;
@@ -384,7 +372,6 @@ javaScriptTopicClicked() {
         showAnswerMessage: false,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else if (this.state.cssTopicClicked === true) {
       let i = this.state.count;
       let newQuestionNumber = this.state.questionNumber + 1;
@@ -409,7 +396,6 @@ javaScriptTopicClicked() {
         showAnswerMessage: false,
         choiceAorBorCorDClicked
       })
-      this.render()
     } else if (this.state.javaScriptTopicClicked === true) {
       let i = this.state.count;
       let newQuestionNumber = this.state.questionNumber + 1;
@@ -434,13 +420,13 @@ javaScriptTopicClicked() {
         showAnswerMessage: false,
         choiceAorBorCorDClicked
       })
-      this.render()
-    }
-    
+    }  
   }
+
   componentDidMount() {
     window.addEventListener('load', this.callAPI);
   }
+  
   render() {
   return (
     <div>
