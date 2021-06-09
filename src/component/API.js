@@ -117,7 +117,7 @@ class API extends Component {
     this.setState({
       htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked, 
       questionNumber, count, numberOfQuestions, firstQuestion,
-       answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
+      answer, choiceA, choiceB, choiceC, choiceD, numberOfCorrectAnswers
     })
   }
 
