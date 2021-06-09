@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "(cd client && yarn build) & node server/app.js",
-    "build": "yarn build & (cd ../ && node server/app.js)"
+    "start": "(cd client && yarn build) & node server/app.js"
   },
   "author": "",
   "license": "ISC",
