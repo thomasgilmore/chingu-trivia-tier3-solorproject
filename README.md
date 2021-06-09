@@ -4,9 +4,22 @@ This is my Chingu Solo Project of [Tier 3 - Chingu Trivia](https://github.com/ch
 
 I used [Create React App](https://github.com/facebook/create-react-app) for this project and created a node.js server to host the project and fetch the api.
 
-## Commands
+## App's Purpose / Function 
 
-The following commands are to build and host the project on a local server after you download or clone the project.
+First is the topic buttons for the different types of questions from the api that is provided. 
+
+Once one of the topic buttons are clicked the trivia of that topic starts and the first question appears. 
+
+## Dependencies
+
+The other dependencies that I used that are not included from Create React App are:
+
+- express
+- axios
+
+## Build/Deploy Instructions
+
+The following commands are to build and deploy the project on a local server after you download or clone the project.
 
 ### `npm run build`
 
