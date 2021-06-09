@@ -44,7 +44,7 @@ class API extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:3000/api" || "https://gilmore-chingu-trivia.herokuapp.com/api")
+    fetch("https://gilmore-chingu-trivia.herokuapp.com/api")
     .then(res => res.json())
     .then(res => {
       let apiRespone = res.data;
