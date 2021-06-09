@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './api.css';
+import Nav from './Nav';
 import QuestionCard from './QuestionCard';
 
 class API extends Component {
@@ -33,6 +34,7 @@ class API extends Component {
       choiceAorBorCorDClicked: false
     };
     this.callAPI = this.callAPI.bind(this);
+    this.navItemClick = this.navItemClick.bind(this);
     this.htmlTopicClicked = this.htmlTopicClicked.bind(this);
     this.cssTopicClicked = this.cssTopicClicked.bind(this);
     this.javaScriptTopicClicked = this.javaScriptTopicClicked.bind(this);
@@ -44,7 +46,8 @@ class API extends Component {
   }
 
   callAPI() {
-    fetch("https://gilmore-chingu-trivia.herokuapp.com/api")
+    let url = window.location.protocol + '//' + window.location.host + '/api';
+    fetch(url)
     .then(res => res.json())
     .then(res => {
       let apiRespone = res.data;
@@ -98,6 +101,14 @@ class API extends Component {
     // .then(res => this.setState({ reapiRespone }))
     // console.log(this.state.apiRespone);
   }
+
+  navItemClick() {
+    let htmlTopicClicked = false;
+    let cssTopicClicked = false;
+    let javaScriptTopicClicked = false;
+    this.setState({ htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked })
+  }
+
     htmlTopicClicked() {
       let htmlTopicClicked = true;
       let cssTopicClicked = false;
@@ -432,6 +443,8 @@ javaScriptTopicClicked() {
   }
   render() {
   return (
+    <div>
+    <Nav onClick={this.navItemClick} />
     <div className="container">
     {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false 
       ? <div className="topicButtonDiv">
@@ -462,6 +475,7 @@ javaScriptTopicClicked() {
         choiceAorBorCorDClicked={this.state.choiceAorBorCorDClicked}
       /> 
     }
+    </div>
     </div>
   );
 }
