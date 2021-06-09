@@ -1,6 +1,8 @@
 # Chingu Trivia - Tier 3
 
-This is my Chingu Solo Project of Tier 3 - Chingu Trivia. 
+This is my Chingu Solo Project of [Tier 3 - Chingu Trivia](https://github.com/chingu-voyages/soloproject-tier3-chingu-trivia). 
+
+I used [Create React App](https://github.com/facebook/create-react-app) for this project and created a node.js server to host the project and fetch the api.
 
 ## Commands
 
