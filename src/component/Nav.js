@@ -1,7 +1,7 @@
 import React from 'react';
 import './nav.css';
 
-const Nav = () => {
+function Nav(props) {
     return (
         <nav>
             <div>
@@ -10,10 +10,10 @@ const Nav = () => {
             <div className="divNavUl">
                 <ul className="navUl">
                     <li>
-                        <p className="navItem">Home</p>
+                        <button onClick={props.onClick} className="navItem">Home</button>
                     </li>
                     <li>
-                        <p className="navItem">Questions</p>
+                        <button onClick={props.onClick} className="navItem">Questions</button>
                     </li>
                 </ul>
             </div>
