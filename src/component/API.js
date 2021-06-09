@@ -44,7 +44,7 @@ class API extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:3100/api")
+    fetch("http://localhost:3000/api")
     .then(res => res.json())
     .then(res => {
       let apiRespone = res.data;
