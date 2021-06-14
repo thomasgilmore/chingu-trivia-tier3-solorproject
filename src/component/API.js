@@ -45,6 +45,7 @@ class API extends Component {
     this.nextQuestionClicked = this.nextQuestionClicked.bind(this);
   }
 
+  // callAPI if fetching the server api fetch and making it viewable on the Front End
   callAPI() {
     let url = window.location.protocol + '//' + window.location.host + '/api';
     fetch(url)
@@ -64,12 +65,15 @@ class API extends Component {
       let topic1, topic2, topic3;
       for (var j = 0; j < numberOfQuestions; j++) {
         if (apiRespone[j].topic === "html") {
+          // If the topic of the question is html the questions go into the array htmlQuestions
           htmlQuestions.push(apiRespone[j]);
           topic1 = apiRespone[j].topic;
         } else if (apiRespone[j].topic === "css") {
+          // If the topic of the question is css the questions go into the array htmlQuestions
           cssQuestions.push(apiRespone[j]);
           topic2 = apiRespone[j].topic;
         } else if (apiRespone[j].topic === "javascript") {
+          // If the topic of the question is javascript the questions go into the array htmlQuestions
           javaScriptQuestions.push(apiRespone[j]);
           topic3 = apiRespone[j].topic;
         }
@@ -93,6 +97,7 @@ class API extends Component {
     });
   }
 
+  // Once one of the Nav items are clicked it makes the values false to display the topic buttons again and not the questions.
   navItemClick() {
     let htmlTopicClicked = false;
     let cssTopicClicked = false;
@@ -100,6 +105,7 @@ class API extends Component {
     this.setState({ htmlTopicClicked, cssTopicClicked, javaScriptTopicClicked })
   }
 
+  // html topic button starts and displays html questions 
   htmlTopicClicked() {
     let htmlTopicClicked = true;
     let cssTopicClicked = false;
@@ -121,6 +127,7 @@ class API extends Component {
     })
   }
 
+  // css topic button starts and displays css questions 
   cssTopicClicked() {
     let htmlTopicClicked = false;
     let cssTopicClicked = true;
@@ -142,6 +149,7 @@ class API extends Component {
     })
   }
 
+  // javascript topic button starts and displays javascript questions 
   javaScriptTopicClicked() {
     let htmlTopicClicked = false;
     let cssTopicClicked = false;
@@ -163,6 +171,7 @@ class API extends Component {
     })
   }
 
+  // Button of chocie A clicked and check if it was the correct answer and also displays message and next button
   choiceAClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "a") {
@@ -209,6 +218,7 @@ class API extends Component {
   }
   }
 
+  // Button of chocie B clicked and check if it was the correct answer and also displays message and next button
   choiceBClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "b") {
@@ -255,6 +265,7 @@ class API extends Component {
   }
   }
 
+  // Button of chocie C clicked and check if it was the correct answer and also displays message and next button
   choiceCClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "c") {
@@ -301,6 +312,7 @@ class API extends Component {
   }
   }
 
+  // Button of chocie D clicked and check if it was the correct answer and also displays message and next button
   choiceDClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "d") {
@@ -347,6 +359,7 @@ class API extends Component {
   }
   }
 
+  // next Button Clicked and displays next question in topic
   nextQuestionClicked() {
     if (this.state.htmlTopicClicked === true) {
       let i = this.state.count;
@@ -423,6 +436,7 @@ class API extends Component {
     }  
   }
 
+  // on page load it will run the function callAPI to fetch the questions
   componentDidMount() {
     window.addEventListener('load', this.callAPI);
   }
@@ -432,6 +446,7 @@ class API extends Component {
     <div>
     <Nav onClick={this.navItemClick} />
     <div className="container">
+    {/* Display either the Topic Buttons or the Questions for that Topic */}
     {this.state.htmlTopicClicked === false && this.state.cssTopicClicked === false && this.state.javaScriptTopicClicked === false 
       ? <div className="topicButtonDiv">
       <button className="topicButton" onClick={this.htmlTopicClicked}>{this.state.topic1}</button>
