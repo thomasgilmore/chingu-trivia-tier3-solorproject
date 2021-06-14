@@ -14,15 +14,19 @@ Once one of the topic buttons are clicked the trivia of that topic starts and th
 
 The other dependencies that I used that are not included from Create React App are:
 
-- express
-- axios
+- [express](https://www.npmjs.com/package/express)
+- [axios](https://www.npmjs.com/package/axios)
 
 ## Build/Deploy Instructions
 
 The following commands are to build and deploy the project on a local server after you download or clone the project.
 
-### `npm run build`
+`cd into the project directory`
 
-### `npm start`
+`run npm install`
+
+`npm run build`
+
+`npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
