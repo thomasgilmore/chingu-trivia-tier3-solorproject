@@ -21,12 +21,11 @@ The other dependencies that I used that are not included from Create React App a
 
 The following commands are to build and deploy the project on a local server after you download or clone the project.
 
-`cd into the project directory`
-
-`run npm install`
-
-`npm run build`
-
-`npm start`
+```sh
+cd into the project directory
+run npm install
+npm run build
+npm start
+```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
