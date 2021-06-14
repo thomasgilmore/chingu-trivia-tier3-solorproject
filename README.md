@@ -4,6 +4,8 @@ This is my Chingu Solo Project of [Tier 3 - Chingu Trivia](https://github.com/ch
 
 I used [Create React App](https://github.com/facebook/create-react-app) for this project and created a node.js server to host the project and fetch the api.
 
+**LIVE LINK**: [https://gilmore-chingu-trivia.herokuapp.com/](https://gilmore-chingu-trivia.herokuapp.com/)
+
 ## App's Purpose / Function 
 
 First is the topic buttons for the different types of questions from the api that is provided. 
@@ -14,8 +16,8 @@ Once one of the topic buttons are clicked the trivia of that topic starts and th
 
 The other dependencies that I used that are not included from Create React App are:
 
-- [express](https://www.npmjs.com/package/express)
-- [axios](https://www.npmjs.com/package/axios)
+- [Express](https://www.npmjs.com/package/express)
+- [Axios](https://www.npmjs.com/package/axios)
 
 ## Build/Deploy Instructions
 
