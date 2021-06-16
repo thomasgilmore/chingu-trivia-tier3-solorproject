@@ -171,7 +171,7 @@ class API extends Component {
     })
   }
 
-  // Button of chocie A clicked and check if it was the correct answer and also displays message and next button
+  // Button of choice A clicked and check if it was the correct answer and also displays message and next button
   choiceAClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "a") {
@@ -218,7 +218,7 @@ class API extends Component {
   }
   }
 
-  // Button of chocie B clicked and check if it was the correct answer and also displays message and next button
+  // Button of choice B clicked and check if it was the correct answer and also displays message and next button
   choiceBClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "b") {
@@ -265,7 +265,7 @@ class API extends Component {
   }
   }
 
-  // Button of chocie C clicked and check if it was the correct answer and also displays message and next button
+  // Button of choice C clicked and check if it was the correct answer and also displays message and next button
   choiceCClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "c") {
@@ -312,7 +312,7 @@ class API extends Component {
   }
   }
 
-  // Button of chocie D clicked and check if it was the correct answer and also displays message and next button
+  // Button of choice D clicked and check if it was the correct answer and also displays message and next button
   choiceDClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "d") {
