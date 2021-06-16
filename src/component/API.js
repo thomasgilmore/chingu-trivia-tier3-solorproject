@@ -38,6 +38,10 @@ class API extends Component {
     this.htmlTopicClicked = this.htmlTopicClicked.bind(this);
     this.cssTopicClicked = this.cssTopicClicked.bind(this);
     this.javaScriptTopicClicked = this.javaScriptTopicClicked.bind(this);
+    this.correctChoiceLastQuestion = this.correctChoiceLastQuestion.bind(this);
+    this.wrongChoiceLastQuestion = this.wrongChoiceLastQuestion.bind(this);
+    this.correctChoice = this.correctChoice.bind(this);
+    this.wrongChoice = this.wrongChoice.bind(this);
     this.choiceAClicked = this.choiceAClicked.bind(this);
     this.choiceBClicked = this.choiceBClicked.bind(this);
     this.choiceCClicked = this.choiceCClicked.bind(this);
@@ -171,31 +175,33 @@ class API extends Component {
     })
   }
 
-  // Button of choice A clicked and check if it was the correct answer and also displays message and next button
-  choiceAClicked() {
-    if (this.state.questionNumber === this.state.numberOfQuestions) {
-      if(this.state.answer === "a") {
-        let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-        let message = 'Well Done! Correct! You got ' +  newNumberOfCorrectAnswers + ' Correct Answers!';
+  // correct choice clicked of last question 
+  correctChoiceLastQuestion() {
+    let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
+    let message = 'Well Done! Correct! You got ' +  newNumberOfCorrectAnswers + ' Correct Answers!';
+    let choiceAorBorCorDClicked = true;
+    this.setState({
+      answerMessage: message,
+      showAnswerMessage: true,
+      numberOfCorrectAnswers: newNumberOfCorrectAnswers,
+      choiceAorBorCorDClicked
+    })
+  }
+
+  // wrong choice clicked of last question 
+  wrongChoiceLastQuestion() {
+    let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
         let choiceAorBorCorDClicked = true;
         this.setState({
           answerMessage: message,
           showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
           choiceAorBorCorDClicked
         })
-      } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          choiceAorBorCorDClicked
-        })
-      }
-    } else {
-    if(this.state.answer === "a") {
-      let message = 'Well Done! Correct!';
+  }
+
+  // correct choice clicked of question
+  correctChoice() {
+    let message = 'Well Done! Correct!';
       let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
       let choiceAorBorCorDClicked = true;
       this.setState({
@@ -205,8 +211,11 @@ class API extends Component {
         numberOfCorrectAnswers: newNumberOfCorrectAnswers,
         choiceAorBorCorDClicked
       })
-    } else {
-      let message = 'Sorry... Wrong Choice.';
+  }
+
+  // wrong choice clicked of question
+  wrongChoice() {
+    let message = 'Sorry... Wrong Choice.';
       let choiceAorBorCorDClicked = true;
       this.setState({
         showNextButton: true,
@@ -214,149 +223,74 @@ class API extends Component {
         showAnswerMessage: true,
         choiceAorBorCorDClicked
       })
-    }
   }
+
+  // Button of choice A clicked and check if it was the correct answer and also displays message and next button
+  choiceAClicked() {
+    if (this.state.questionNumber === this.state.numberOfQuestions) {
+      if(this.state.answer === "a") {
+        this.correctChoiceLastQuestion();
+      } else {
+        this.wrongChoiceLastQuestion();
+      }
+    } else {
+      if(this.state.answer === "a") {
+        this.correctChoice();
+      } else {
+        this.wrongChoice();
+      }
+    }
   }
 
   // Button of choice B clicked and check if it was the correct answer and also displays message and next button
   choiceBClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "b") {
-        let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-        let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-          choiceAorBorCorDClicked
-        })
+        this.correctChoiceLastQuestion();
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          choiceAorBorCorDClicked
-        })
+        this.wrongChoiceLastQuestion();
       }
     } else {
-    if(this.state.answer === "b") {
-      let message = 'Well Done! Correct!';
-      let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-        choiceAorBorCorDClicked
-      })
-    } else {
-      let message = 'Sorry... Wrong Choice.';
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        choiceAorBorCorDClicked
-      })
+      if(this.state.answer === "b") {
+        this.correctChoice();
+      } else {
+        this.wrongChoice();
+      }
     }
-  }
   }
 
   // Button of choice C clicked and check if it was the correct answer and also displays message and next button
   choiceCClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "c") {
-        let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-        let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-          choiceAorBorCorDClicked
-        })
+        this.correctChoiceLastQuestion();
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          choiceAorBorCorDClicked
-        })
+        this.wrongChoiceLastQuestion();
       }
     } else {
-    if(this.state.answer === "c") {
-      let message = 'Well Done! Correct!';
-      let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-        choiceAorBorCorDClicked
-      })
-    } else {
-      let message = 'Sorry... Wrong Choice.';
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        choiceAorBorCorDClicked
-      })
+      if(this.state.answer === "c") {
+        this.correctChoice();
+      } else {
+        this.wrongChoice();
+      }
     }
-  }
   }
 
   // Button of choice D clicked and check if it was the correct answer and also displays message and next button
   choiceDClicked() {
     if (this.state.questionNumber === this.state.numberOfQuestions) {
       if(this.state.answer === "d") {
-        let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-        let message = 'Well Done! Correct! You got ' + newNumberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-          choiceAorBorCorDClicked
-        })
+        this.correctChoiceLastQuestion();
       } else {
-        let message = 'Sorry... Wrong Choice. You got '  +  this.state.numberOfCorrectAnswers + ' Correct Answers!';
-        let choiceAorBorCorDClicked = true;
-        this.setState({
-          answerMessage: message,
-          showAnswerMessage: true,
-          choiceAorBorCorDClicked
-        })
+        this.wrongChoiceLastQuestion();
       }
     } else {
-    if(this.state.answer === "d") {
-      let message = 'Well Done! Correct!';
-      let newNumberOfCorrectAnswers = this.state.numberOfCorrectAnswers + 1;
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        numberOfCorrectAnswers: newNumberOfCorrectAnswers,
-        choiceAorBorCorDClicked
-      })
-    } else {
-      let message = 'Sorry... Wrong Choice.';
-      let choiceAorBorCorDClicked = true;
-      this.setState({
-        showNextButton: true,
-        answerMessage: message,
-        showAnswerMessage: true,
-        choiceAorBorCorDClicked
-      })
+      if(this.state.answer === "d") {
+        this.correctChoice();
+      } else {
+        this.wrongChoice();
+      }
     }
-  }
   }
 
   // next Button Clicked and displays next question in topic
